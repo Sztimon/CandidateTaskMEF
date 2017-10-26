@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using AutoMapper;
+using DataModel.App_Start;
 
 namespace CandidateTask
 {
@@ -16,6 +18,7 @@ namespace CandidateTask
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Mapper.Initialize(cfg => cfg.AddProfile<MappingProfile>());
         }
     }
 }
